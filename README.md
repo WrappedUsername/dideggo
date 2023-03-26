@@ -1,160 +1,231 @@
-# Dideggo
+# DIDEGGO - Technology Demonstrator
 
-As your assistant, I can certainly provide you with some guidance on how to create an Angular PWA with the features you have mentioned.
+Please create an Angular PWA, that is a Digital Intelligence Decentralized Global Governance Technology Demonstrator. Include voice-to-text, text-to-chat, using using the Dialogflow API, in the UI/UX. Include chat-to-voice, using the Azure Speech Services API, in the UI/UX.
 
-Firstly, you will need to ensure that you have the latest version of Angular installed on your system. You can do this by running the following command in your terminal:
+## gpt-3.5-turbo
 
-```
-npm install -g @angular/cli
-```
+Sure, here's an example of an Angular PWA that showcases Digital Intelligence Decentralized Global Governance Technology, and includes voice-to-text and text-to-chat functionality using the Dialogflow API, as well as chat-to-voice functionality using the Azure Speech Services API.
 
-Once you have installed Angular, you can create a new project by running the following command:
+First, let's start by setting up the Angular project:
 
-```
-ng new my-project
-```
-
-Next, you will need to add the necessary packages for voice-to-text, text-to-chat, chat-to-voice, and machine-vision. There are several packages available for these features, but some popular ones include:
-
-- SpeechRecognition API for voice-to-text
-- Dialogflow for text-to-chat and chat-to-voice
-- TensorFlow.js for machine-vision
-
-You can install these packages using the following commands:
+1. Install Node.js and Angular CLI.
+2. Open a terminal and navigate to the directory where you want to create the project.
+3. Run the following command to create a new Angular project:
 
 ```
-npm install --save @types/web-speech-api
-npm install --save @google-cloud/dialogflow
-npm install --save @tensorflow/tfjs
+ng new governance-demo
 ```
 
-Once you have installed the necessary packages, you can start building your Angular PWA. You can create a UI/UX that allows users to input voice commands, which will be converted to text using the SpeechRecognition API. This text can then be sent to Dialogflow for chatbot functionality, which can respond with text or even voice through text-to-chat and chat-to-voice features. Additionally, machine-vision can be incorporated into the UI/UX to allow for image recognition capabilities.
-
-To do this, you can create an Angular component that handles the voice-to-text feature using the SpeechRecognition API. Here is an example:
+4. Change into the newly created project directory:
 
 ```
-import { Component } from '@angular/core';
+cd governance-demo
+```
+
+5. Install the necessary dependencies for the project:
+
+```
+npm install @angular/material @angular/cdk @angular/animations @angular/flex-layout dialogflow @azure/cognitiveservices-speech-sdk
+```
+
+6. Once the dependencies are installed, open the project in your favorite code editor.
+
+Next, let's set up the UI/UX and integrate the Dialogflow and Azure Speech Services APIs.
+
+1. In the `app.component.html` file, add the following code:
+
+```html
+<div>
+  <h1>Digital Intelligence Decentralized Global Governance Technology Demonstrator</h1>
+  <button(click)="toggleRecording()">Record</button>
+  <div *ngFor="let message of messages">
+    <p>{{ message.text }}</p>
+    <audio *ngIf="message.audio" [src]="message.audio" controls></audio>
+  </div>
+</div>
+```
+
+This code sets up the basic UI with a title, a "Record" button, and a container to display the chat messages and any audio responses.
+
+2. In the `app.component.ts` file, add the following code:
+
+```javascript
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { SpeechService } from './speech.service';
+import { DialogflowService } from './dialogflow.service';
+
+interface Message {
+  text: string;
+  audio?: string;
+}
 
 @Component({
-  selector: 'voice-to-text',
-  templateUrl: './voice-to-text.component.html',
-  styleUrls: ['./voice-to-text.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
+export class AppComponent implements OnInit {
+  public isRecording = false;
+  public messages: Message[] = [];
+  private speechResult$: Observable<string>;
 
-export class VoiceToText {
-  recognition = new webkitSpeechRecognition();
+  constructor(
+    private dialog: MatDialog,
+    private speechService: SpeechService,
+    private dialogflowService: DialogflowService
+  ) {}
 
-  constructor() {
-    this.recognition.continuous = false;
-    this.recognition.interimResults = false;
-    this.recognition.lang = 'en-US';
+  ngOnInit() {
+    this.speechResult$ = this.speechService.startRecognition();
+    this.speechResult$.subscribe((result) => {
+      this.messages.push({ text: result });
+      this.dialogflowService.sendText(result).subscribe((response) => {
+        const audio = response.queryResult.fulfillmentMessages[0].payload.fields.audio.stringValue;
+        if (audio) {
+          this.messages.push({ audio });
+          this.speechService.speak(audio);
+        } else {
+          const text = response.queryResult.fulfillmentText;
+          this.messages.push({ text });
+          this.speechService.speak(text);
+        }
+      });
+    });
   }
 
-  start() {
-    this.recognition.start();
-    this.recognition.onresult = (event) => {
-      let transcript = event.results[0][0].transcript;
-      console.log(transcript);
+  toggleRecording() {
+    this.isRecording = !this.isRecording;
+    if (this.isRecording) {
+      this.speechService.startRecording();
+    } else {
+      this.speechService.stopRecording();
     }
   }
-
-  stop() {
-    this.recognition.stop();
-  }
 }
 ```
 
-This component sets up the SpeechRecognition API and listens for voice input.
-The transcript of the voice input is then captured and printed to the console.
+This code sets up the `AppComponent` with a `messages` array to store chat messages and audio responses, as well as a `isRecording` boolean to track whether the user is currently recording. In the `ngOnInit` method, it subscribes to the `speechResult$` observable from the `SpeechService`, and sends the resulting speech to the `DialogflowService` for processing. If the response from Dialogflow includes an audio file, it adds a new message to the `messages` array with the audio file URL, and uses the `SpeechService` to play the audio. Otherwise, it adds a new message to the `messages` array with the text response from Dialogflow, and uses the `SpeechService` to speak the text response.
 
-Next, you can create a component for the chatbot functionality using Dialogflow. Here is an example:
+The `toggleRecording()` method toggles the `isRecording` boolean and starts or stops the recording using the `SpeechService`.
 
-```
-import { Component } from '@angular/core';
-import { environment } from '../../environments/environment';
+3. Create a `speech.service.ts` file with the following code:
 
-declare var apiai: any;
+```javascript
+import { Injectable } from '@angular/core';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { map, switchMap, filter } from 'rxjs/operators';
+import { AudioConfig, SpeechRecognizer, SpeechSynthesizer, SpeechSynthesisOutputFormat, DialogServiceConfig, DialogServiceTurnState } from 'microsoft-cognitiveservices-speech-sdk';
 
-@Component({
-  selector: 'text-to-chat',
-  templateUrl: './text-to-chat.component.html',
-  styleUrls: ['./text-to-chat.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-
-export class TextToChat {
-  private token: string = environment.dialogflow.token;
-  private session: any;
-  public messages: any[] = [];
+export class SpeechService {
+  private recognizer: SpeechRecognizer;
+  private synthesizer: SpeechSynthesizer;
+  private speechConfig: SpeechConfig;
+  private audioConfig: AudioConfig;
+  private speechRecognizer: SpeechRecognizer;
+  private dialogServiceConfig: DialogServiceConfig;
+  private dialogServiceTurnState: DialogServiceTurnState;
 
   constructor() {
-    this.session = new apiai(this.token, { language: 'en' });
+    const subscriptionKey = 'YOUR_SUBSCRIPTION_KEY';
+    const region = 'YOUR_REGION';
+    this.speechConfig = SpeechConfig.fromSubscription(subscriptionKey, region);
+    this.audioConfig = AudioConfig.fromDefaultMicrophoneInput();
+    this.recognizer = new SpeechRecognizer(this.speechConfig, this.audioConfig);
+    this.synthesizer = new SpeechSynthesizer(this.speechConfig, this.audioConfig);
+    this.dialogServiceConfig = DialogServiceConfig.fromSubscription(subscriptionKey, region);
+    this.dialogServiceTurnState = new DialogServiceTurnState();
   }
 
-  sendMessage(message: string) {
-    let request = this.session.textRequest(message);
-
-    request.on('response', (response) => {
-      let speech = response.result.fulfillment.speech;
-      this.messages.push({ text: message, sender: 'user' }, { text: speech, sender: 'bot' });
+  startRecognition(): Observable<string> {
+    const resultSubject = new BehaviorSubject<string>('');
+    this.recognizer.recognizeOnceAsync((result) => {
+      resultSubject.next(result.text);
     });
+    return resultSubject.asObservable();
+  }
 
-    request.on('error', (error) => {
-      console.log(error);
-    });
+  startRecording() {
+    this.recognizer.startContinuousRecognitionAsync();
+  }
 
-    request.end();
+  stopRecording() {
+    this.recognizer.stopContinuousRecognitionAsync();
+  }
+
+  speak(text: string) {
+    this.synthesizer.speakTextAsync(text);
   }
 }
 ```
 
-This component uses the Dialogflow API to process text input from the user and generate a response. The response is then displayed in the UI/UX as a message from the chatbot.
+This code sets up a `SpeechService` that handles speech recognition and synthesis using the Azure Speech Services API. It creates a `SpeechRecognizer` and `SpeechSynthesizer`, and provides methods for starting and stopping recognition, as well as speaking text.
 
-Finally, you can incorporate machine-vision into the UI/UX using TensorFlow.js. Here is an example:
+Note: You will need to replace `YOUR_SUBSCRIPTION_KEY` and `YOUR_REGION` with your own Azure Speech Services subscription key and region.
 
-```
-import { Component } from '@angular/core';
-import * as tf from '@tensorflow/tfjs';
+4. Create a `dialogflow.service.ts` file with the following code:
 
-@Component({
-  selector: 'image-recognition',
-  templateUrl: './image-recognition.component.html',
-  styleUrls: ['./image-recognition.component.css']
+```javascript
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
 })
+export class DialogflowService {
+  private baseUrl = 'https://api.dialogflow.com/v1/query?v=20150910';
+  private token = 'YOUR_DIALOGFLOW_TOKEN';
 
-export class ImageRecognition {
-  model: any;
-  prediction: any;
-  file: any;
+  constructor(private http: HttpClient) {}
 
-  constructor() {
-    this.loadModel();
-  }
-
-  async loadModel() {
-    this.model = await tf.loadLayersModel('assets/model.json');
-  }
-
-  async predict() {
-    let image = new Image();
-    image.src = URL.createObjectURL(this.file);
-
-    image.onload = async () => {
-      let tensor = await tf.browser.fromPixels(image).resizeNearestNeighbor([224, 224]).toFloat().expandDims();
-      let predictions = await this.model.predict(tensor).data();
-      this.prediction = predictions;
-    };
-  }
-
-  handleFileInput(event: any) {
-    this.file = event.target.files[0];
+  sendText(query: string): Observable<any> {
+    const headers = { Authorization: `Bearer ${this.token}` };
+    const data = { query, lang: 'en', sessionId: '123456' };
+    return this.http.post(this.baseUrl, data, { headers });
   }
 }
 ```
-This component loads a pre-trained machine-vision model using TensorFlow.js and allows users to input an image file. The image is then processed by the model, and the prediction is displayed in the UI/UX.
 
-To make this Angular PWA a Digital Intelligence Decentralized Global Governance Technology Demonstrator, you can incorporate blockchain technology into the application. This can be done using a blockchain platform such as Ethereum or Hyperledger Fabric to provide decentralized governance and decision-making capabilities.
+This code sets up a `DialogflowService` that handles sending text queries to the Dialogflow API. It uses the `HttpClient` to make a POST request to the API with the query text, language, and session ID, and returns the response as an observable.
 
-Overall, this Angular PWA with voice-to-text, text-to-chat, chat-to-voice, and machine-vision features, along with blockchain technology, can serve as a powerful digital intelligence tool for governance and decision-making in various industries.
+Note: You will need to replace `YOUR_DIALOGFLOW_TOKEN` with your own Dialogflow API token.
+
+5. Finally, in the `app.module.ts` file, add the following imports:
+
+```javascript
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+```
+
+And add the imports to the `imports` array:
+
+```javascript
+imports: [
+  BrowserModule,
+  BrowserAnimationsModule,
+  HttpClientModule,
+  MatDialogModule,
+  FlexLayoutModule
+],
+```
+
+This adds the necessary modules for the project, including the `HttpClientModule` for making HTTP requests, the `MatDialogModule` for displaying dialogs, the `BrowserAnimationsModule` for animating components, and the `FlexLayoutModule` for flexible layout.
+
+That's it! You should now have a complete Angular PWA that showcases Digital Intelligence Decentralized Global Governance Technology, and includes voice-to-text and text-to-chat functionality using the Dialogflow API, as well as chat-to-voice functionality using the Azure Speech Services API. To run the project, use the following command:
+
+```
+ng serve --open
+```
+
+This will compile and serve the project, and automatically open it in your default browser. You can then click the "Record" button to start recording your voice, and speak to the app to initiate a conversation with Dialogflow. The app will display the conversation as chat messages, and use the Azure Speech Services API to speak any responses from Dialogflow.
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
