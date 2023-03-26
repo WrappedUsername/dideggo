@@ -5,6 +5,14 @@
   "main": "main.ts",
   "author": "WrappedUsername",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WrappedUsername/dideggo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WrappedUsername/dideggo/issues"
+  },
+  "homepage": "https://github.com/WrappedUsername/dideggo#readme",
   "private": true,
   "scripts": {
     "ng": "ng",
