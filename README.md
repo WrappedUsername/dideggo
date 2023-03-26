@@ -228,4 +228,118 @@ ng serve --open
 This will compile and serve the project, and automatically open it in your default browser. You can then click the "Record" button to start recording your voice, and speak to the app to initiate a conversation with Dialogflow. The app will display the conversation as chat messages, and use the Azure Speech Services API to speak any responses from Dialogflow.
 
 
+## Adding ERC-4337
+
+Can you please provide me code snippets to integrate one-click account abstraction, blockchain functionality from here: https://docs.stackup.sh/ into my Angular PWA.
+
+Certainly! Here are some code snippets to help you integrate one-click account abstraction and blockchain functionality using Stackup's API into your Angular PWA:
+
+1. First, you'll need to install the Stackup SDK. Open a terminal and navigate to your project directory, then run the following command:
+
+```
+npm install stackup-sdk
+```
+
+2. Once the SDK is installed, create a new service to handle Stackup API requests. In the terminal, run the following command to generate a new service file:
+
+```
+ng generate service stackup
+```
+
+3. In the `stackup.service.ts` file, add the following code:
+
+```javascript
+import { Injectable } from '@angular/core';
+import { Stackup } from 'stackup-sdk';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StackupService {
+  private stackup: Stackup;
+
+  constructor() {
+    const apiKey = 'YOUR_API_KEY';
+    this.stackup = new Stackup(apiKey);
+  }
+
+  async getAccount(): Promise<any> {
+    const account = await this.stackup.getAccount();
+    return account;
+  }
+
+  async getBalance(): Promise<any> {
+    const balance = await this.stackup.getBalance();
+    return balance;
+  }
+
+  async send Transaction(toAddress: string, amount: number): Promise<any> {
+    const tx = await this.stackup.sendTransaction(toAddress, amount);
+    return tx;
+  }
+}
+```
+
+This code sets up a `StackupService` that creates a new instance of the `Stackup` class and provides methods for retrieving the current account, balance, and sending transactions.
+
+Note: You will need to replace `YOUR_API_KEY` with your own Stackup API key.
+
+4. In the `app.module.ts` file, add the following imports:
+
+```javascript
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+```
+
+And add the imports to the `imports` array:
+
+```javascript
+imports: [
+  BrowserModule,
+  BrowserAnimationsModule,
+  HttpClientModule,
+  MatDialogModule,
+  FlexLayoutModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatInputModule,
+  MatButtonModule,
+  MatIconModule
+],
+```
+
+This adds the necessary modules for the project, including the `FormsModule` and `ReactiveFormsModule` for handling forms, the `MatInputModule` for input fields, the `MatButtonModule` for buttons, and the `MatIconModule` for icons.
+
+5. In the `app.component.html` file, add the following code:
+
+```html
+<div>
+  <h1>Stackup Blockchain Demo</h1>
+  <div *ngIf="!account">
+    <button (click)="connect()">Connect</button>
+  </div>
+  <div *ngIf="account">
+    <p>Account: {{ account.address }}</p>
+    <p>Balance: {{ balance }} ETH</p>
+    <form (ngSubmit)="sendTransaction()">
+      <mat-form-field>
+        <input matInput placeholder="To Address" [(ngModel)]="toAddress">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Amount" [(ngModel)]="amount">
+      </mat-form-field>
+      <button mat-raised-button color="primary">Send</button>
+    </form>
+  </div>
+</div>
+```
+
+This code sets up the basic UI with a "Connect" button that initiates one-click account abstraction, and a container to display the current account and balance, as well as a form to send transactions.
+
+6. In the `app.component.ts` file, add the following code:
+
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
