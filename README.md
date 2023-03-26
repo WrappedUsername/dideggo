@@ -340,6 +340,45 @@ This code sets up the basic UI with a "Connect" button that initiates one-click 
 
 6. In the `app.component.ts` file, add the following code:
 
+```javascript
+import { Component, OnInit } from '@angular/core';
+import { StackupService } from './stackup.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent implements OnInit {
+  public account: any;
+  public balance: number;
+  public toAddress: string;
+  public amount: number;
+
+  constructor(private stackupService: StackupService) {}
+
+  ngOnInit() {}
+
+  async connect() {
+    this.account = await this.stackupService.getAccount();
+    this.balance = await this.stackupService.getBalance();
+  }
+
+  async sendTransaction() {
+    const tx = await this.stackupService.sendTransaction(this.toAddress, this.amount);
+    console.log('Transaction sent:', tx);
+  }
+}
 ```
+
+This code sets up the `AppComponent` with a `StackupService` dependency and provides methods to connect to the current account, retrieve the current balance, and send transactions. The `connect()` method initiates one-click account abstraction by calling the `getAccount()` method from the `StackupService`, and updates the `account` and `balance` variables. The `sendTransaction()` method sends a transaction using the `toAddress` and `amount` variables, and logs the resulting transaction to the console.
+
+That's it! You should now have a complete Angular PWA that integrates one-click account abstraction and blockchain functionality using the Stackup API. To run the project, use the following command:
+
+```
+ng serve --open
+```
+
+This will compile and serve the project, and automatically open it in your default browser. You can then click the "Connect" button to initiate one-click account abstraction, and use the form to send transactions to the blockchain.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
