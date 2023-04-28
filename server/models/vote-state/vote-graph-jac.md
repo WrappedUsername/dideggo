@@ -20,7 +20,7 @@ graph TD;
 
 - Converting the pseudocode into Jac programming language:
 
-```jac
+```typescript
 // Defining the nodes
 node server;
 node models;
