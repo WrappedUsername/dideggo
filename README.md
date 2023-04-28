@@ -20,6 +20,7 @@ The problem:
 <img width="250" height="250" align="left" src="https://user-images.githubusercontent.com/104662990/235253369-65eb40b3-ba6a-4f1b-a141-f32c7705f733.jpg"/>
 
   - It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or become corrupted after being seated in that position of power.
+- Only bat-shit crazy people continue to do the same thing over, and over, and over, and over, expecting different results. 
 
 ```yml
 The solution:
