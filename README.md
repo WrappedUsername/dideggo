@@ -1,5 +1,10 @@
 # DIDEGGO - Digital Intelligence Decentralized Global Governance - 🚧 Work In Progress 🏗
 
+<p align="left"> 
+<img src="https://komarev.com/ghpvc/?username=dideggo&label=repo%20views&color=f79952&style=flat" alt="dideggo" /> 
+<img alt="Stars" src="https://img.shields.io/github/stars/WrappedUsername/dideggo?style=flat-square&labelColor=343b41"/>
+</p>
+
 ```mermaid
 ---
 title: Didefade Jaseci Graph
