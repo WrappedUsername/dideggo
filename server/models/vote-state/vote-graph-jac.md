@@ -9,6 +9,7 @@ graph TD;
     node_models-->node_biencoder_model
     node_models-->node_entity_extraction
     node_models-->node_embedding_cache
+    node_models-->node_global-governance_state
     node_models-->node_vote_state
     node_vote_state-->node_vote_state_1
     node_vote_state-->node_vote_state_2
