@@ -30,6 +30,10 @@ node vote_state {
     has prompts;
 }
 
+edge transition {
+    has intent;
+}
+
 // Static graph definition
 graph vote {
     has anchor server;
@@ -54,7 +58,7 @@ graph vote {
         );
         vote_state_4 = spawn node::vote_state(
             title = "Citizens Dashboard",
-            message = "Welcome to your Citizens Dashboard! Would you like to update info?,
+            message = "Welcome to your Citizens Dashboard! Would you like to update info?",
             prompts = ["Yes", "Voting Page","Proposals Page","Citizens Dashboard","Quit"]
         );
         vote_state_5 = spawn node::vote_state(
@@ -62,6 +66,8 @@ graph vote {
             message = "Thank you for participating in DIDEGGO! Are you ready to leave the app?",
             prompts = ["Yes", "Voting Page","Proposals Page","Citizens Dashboard","Quit"]
         );
+
+        vote_state_4 +[transition(intent="Citizens Dashboard")]+> node_citizens_dashboard;
 
         // Connecting the nodes together
         server ++> models;
