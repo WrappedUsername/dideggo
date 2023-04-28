@@ -16,6 +16,9 @@ The problem:
 - Humans are far too easily corruptable, one only needs to take an honest look at history to see this truth.
   - That is not to say that *all* persons in positions of power *will* ultimately become corrupted, *but*...
 - Do we really want to continue to risk the chance of people in positions of power to ultimately become corrupted?
+
+<img width="250" height="250" align="left" src="https://user-images.githubusercontent.com/104662990/235253369-65eb40b3-ba6a-4f1b-a141-f32c7705f733.jpg"/>
+
   - It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or become corrupted after being seated in that position of power.
 
 ```yml
