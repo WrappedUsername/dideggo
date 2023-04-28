@@ -30,8 +30,8 @@ graph TD;
     node_root-->node_server
     node_root-->node_client
     node_client-->node_landing_page
-    node_client-->node_vote_page
-    node_client-->node_proposals_page
+    node_landing_page-->node_vote_page
+    node_landing_page-->node_proposals_page
     node_server-->node_models
     node_server-->node_auth_citizen_dir
     node_models-->node_bi_enc
