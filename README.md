@@ -8,7 +8,8 @@
 ```yml
 The problem:
 ```
-- Humans are far to easily corruptable, one only needs to take an honest look at history to see this truth.
+
+- Humans are far too easily corruptable, one only needs to take an honest look at history to see this truth.
   - That is not to say that *all* persons in positions of power *will* ultimately become corrupted, *but*...
 - Do we really want to continue to risk the chance of people in positions of power to ultimately become corrupted?
   - It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or become corrupted after being seated in that position of power.
