@@ -25,7 +25,7 @@ The problem:
 The solution:
 ```
 
-- The decentralized AI global governance model, will receive votes (one vote to one citizen, this removes centralized power and influence) and proposals directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current governing models used today, the people in positions of power.
+- The decentralized AI global governance model, will receive votes (one vote to one citizen, this removes centralized power and influence) and proposals directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current governing models used today: the people in positions of power.
   - By removing the source of corruption, (the few people in positions of power), that can and will most likey become corrupted from unsavory rich people, this allows a society to self-govern with a incorruptible AI overseeing the process and keeping the autonomous governance model aligned with the country's consitutional framework.
 
 - Ethereum smart contracts will control all governance treasuries to ensure the proper allocation of resources and funds, this will also provide further guard-rails against corruption.
