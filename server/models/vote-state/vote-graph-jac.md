@@ -3,6 +3,9 @@
 - Creating mermaid diagrams as pseudocode:
 
 ```mermaid
+---
+title: The DIDEGGO Vote Graph
+---
 graph TD;
     node_root-->node_server
     node_server-->node_models

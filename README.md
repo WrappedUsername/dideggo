@@ -90,7 +90,7 @@ can cleanup with talker entry{
 
 ```mermaid
 ---
-title: Didefade Jaseci Graph
+title: The DIDEGGO Jaseci Graph
 ---
 graph TD;
     node_root-->node_server
