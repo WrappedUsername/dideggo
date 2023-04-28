@@ -1,4 +1,4 @@
-# DIDEGGO - Digital Intelligence Decentralized Global Governance - 🚧 Work In Progress 🏗
+# DIDEGGO DAO - Digital Intelligence Decentralized Global Governance Decentralized Autonomous Organization - 🚧 Work In Progress 🏗
 
 <p align="left"> 
 <img src="https://komarev.com/ghpvc/?username=dideggo&label=repo%20views&color=f79952&style=flat" alt="dideggo" /> 
