@@ -5,9 +5,13 @@
 <img alt="Stars" src="https://img.shields.io/github/stars/WrappedUsername/dideggo?style=flat-square&labelColor=343b41"/>
 </p>
 
+I am 100% for individual freedom and autonomy.
+
 ```yml
 The problem:
 ```
+
+- Beyond personal autonomy, humans are incapable of governing other humans impartially, full-stop no debate.
 
 - Humans are far too easily corruptable, one only needs to take an honest look at history to see this truth.
   - That is not to say that *all* persons in positions of power *will* ultimately become corrupted, *but*...
