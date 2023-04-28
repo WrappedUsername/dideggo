@@ -1,31 +1,4 @@
-# Building vote_graph.jac file - Work In Progress
-
-- Creating mermaid diagrams as pseudocode:
-
-```mermaid
----
-title: The DIDEGGO Vote Graph
----
-graph TD;
-    node_root-->node_server
-    node_server-->node_models
-    node_models-->node_biencoder_model
-    node_models-->node_entity_extraction
-    node_models-->node_embedding_cache
-    node_models-->node_global-governance_state
-    node_models-->node_vote_state
-    node_vote_state-->node_vote_state_1
-    node_vote_state-->node_vote_state_2
-    node_vote_state-->node_vote_state_3
-    node_vote_state-->node_vote_state_4
-    node_vote_state-->node_vote_state_5
-    node_vote_state_4-->node_citizens_dashboard
-```
-
-- Converting the pseudocode into Jac programming language:
-
-```typescript
-// Defining the nodes
+// Defining the nodes, lol I tested this command using Amazon's CodeWisperer, and NOPE, it doesn't know Jac!
 node server;
 node models;
 node vote_state {
@@ -89,4 +62,3 @@ walker init {
         spawn here ++> node::models;
     }
 }
-```
