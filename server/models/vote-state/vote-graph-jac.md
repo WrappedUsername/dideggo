@@ -1,5 +1,7 @@
 # Building vote_graph.jac file - Work In Progress
 
+- Creating mermaid diagrams as pseudocode:
+
 ```mermaid
 graph TD;
     node_root-->node_server
