@@ -27,6 +27,61 @@ The solution:
 
 - Ethereum smart contracts will control all governance treasuries to ensure the proper allocation of resources and funds, this will also provide further guard-rails against corruption.
 
+## Technical Details
+
+The structure of the progressive web app, will be in the form of a graph.
+
+[reference: Jaseci Bible](https://github.com/Jaseci-Labs/jaseci/raw/main/support/bible/pdf/jaseci_bible.pdf)
+
+```yml
+Jaseci Graph described as a 7-tuple (N, E, C, s, t, cN , cE ), where:
+```
+
+```mermaid
+---
+title: 7-tuple (N, E, C, s, t, cN , cE) Jaseci Graph
+---
+classDiagram
+  N --> E : s = maps the source node to an edge
+  N --> E : t = maps the target node to an edge
+  C <-- N : cN = maps the nodes to context
+  C <-- E : cE = maps the edges to context
+  class N{
+    +the set of nodes in graph
+  }
+  class E{
+    +the set of edges in graph
+  }
+  class C{
+    +the set of all contexts
+  }
+```
+
+- Nodes, edges, and walkers can all have abilities.
+  - Abilities cannot interact outside of the context or local variables of the attached node, edge, or walker, and does not have a return.
+
+An example of this would be a maintainer walker saving a user's id and last conversation state for continuing the conversation at a later time.
+
+```yml
+Saving state with a maintainer walker:
+```
+
+```typescript
+can cleanup with talker entry{
+    if (!vistor:hoping) {
+       spawn *(global.node_conv_root_state) walker::maintainer(
+            user_id = visitor.user_id,
+            user_context = vistor.user_context,
+            dialogue_context = vistor.dialogue_context,
+            last_conv_state = vistor.state_for_continuing
+            /// @dev Add ERC-4337 account abstractions or any other saved states, etc here.
+       );
+    }
+}
+```
+
+- Creating mermaid diagrams as pseudocode:
+
 ```mermaid
 ---
 title: Didefade Jaseci Graph
