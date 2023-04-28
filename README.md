@@ -118,6 +118,7 @@ graph TD;
     node_auth_citizens_dir-->node_user_data_2
     node_auth_citizens_dir-->node_user_data_3
     node_auth_citizens_dir<-->node_auth_citizens_dashboard
+    node_vote_state_4-->node_auth_citizens_dashboard
 ```
 
 ## Building main.jac file

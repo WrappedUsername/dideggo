@@ -80,6 +80,7 @@ graph vote {
         vote_state ++> vote_state_3;
         vote_state ++> vote_state_4;
         vote_state ++> vote_state_5;
+        node_vote_state_4 ++> node_citizens_dashboard;
     }
 }
 
