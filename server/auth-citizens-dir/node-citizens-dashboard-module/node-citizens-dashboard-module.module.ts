@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NodeCitizensDashboardComponent } from './node-citizens-dashboard.component';
+import { NodeCitizensDashboardComponent } from './node-citizens-dashboard/node-citizens-dashboard.component';
 
 
 
@@ -12,4 +12,4 @@ import { NodeCitizensDashboardComponent } from './node-citizens-dashboard.compon
     CommonModule
   ]
 })
-export class NodeCitizensDashboardModule { }
+export class NodeCitizensDashboardModuleModule { }
