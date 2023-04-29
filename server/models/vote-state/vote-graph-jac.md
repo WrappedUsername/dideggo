@@ -9,10 +9,10 @@ title: The DIDEGGO Vote Graph
 graph TD;
     node_root-->node_server
     node_server-->node_models
-    node_models-->node_biencoder_model
-    node_models-->node_entity_extraction
-    node_models-->node_embedding_cache
     node_models-->node_global-governance_state
+    node_global-governance_state-->node_biencoder_model
+    node_global-governance_state-->node_entity_extraction
+    node_global-governance_state-->node_embedding_cache
     node_models-->node_vote_state
     node_vote_state-->node_vote_state_1
     node_vote_state-->node_vote_state_2
