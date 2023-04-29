@@ -26,22 +26,22 @@ graph vote {
         vote_state_2 = spawn node::vote_state(
             title = "Voting Page",
             message = "Welcome to DIDEGGO Voting! Are you ready to vote?",
-            prompts = ["Yes", "Proposals Page","Citizens Dashboard","Quit"]
+            prompts = ["Yes","Proposals Page","Citizens Dashboard","Quit"]
         );
         vote_state_3 = spawn node::vote_state(
             title = "Proposals Page",
             message = "Welcome to DIDEGGO proposals! Are you ready to create a proposal?",
-            prompts = ["Yes", "Voting Page","Citizens Dashboard","Quit"]
+            prompts = ["Yes","Voting Page","Citizens Dashboard","Quit"]
         );
         vote_state_4 = spawn node::vote_state(
             title = "Citizens Dashboard",
             message = "Welcome to your Citizens Dashboard! Would you like to update info?",
-            prompts = ["Yes", "Voting Page","Proposals Page","Quit"]
+            prompts = ["Yes","Voting Page","Proposals Page","Quit"]
         );
         vote_state_5 = spawn node::vote_state(
             title = "Quit",
             message = "Thank you for participating in DIDEGGO! Are you ready to leave the app?",
-            prompts = ["Yes", "Voting Page","Proposals Page","Citizens Dashboard"]
+            prompts = ["Yes","Voting Page","Proposals Page","Citizens Dashboard"]
         );
 
         // Connecting the nodes together
