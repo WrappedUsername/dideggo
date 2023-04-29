@@ -56,10 +56,16 @@ graph vote {
         vote_state_1 +[transition(intent="Voting Page")]+> vote_state_2
         // connect the vote_state_2 to node_voting_page
         vote_state_2 +[transition(intent="Yes")]+> node_voting_page;
+        // connect the vote_state_1 to vote_state_3
+        vote_state_1 +[transition(intent="Proposals Page")]+> vote_state_3
         // connect the vote_state_3 to node_proposals_page
         vote_state_3 +[transition(intent="Yes")]+> node_proposals_page;
+        // connect the vote_state_1 to vote_state_4
+        vote_state_1 +[transition(intent="Citizens Dashboard")]+> vote_state_4
         // connect the vote_state_4 to node_citizens_dashboard
         vote_state_4 +[transition(intent="Yes")]+> node_citizens_dashboard;
+        // connect the vote_state_1 to vote_state_5
+        vote_state_1 +[transition(intent="Quit")]+> vote_state_5
         // connect the vote_state_5 to node_exit_app_page
         vote_state_5 +[transition(intent="Yes")]+> node_exit_app_page;
     }
