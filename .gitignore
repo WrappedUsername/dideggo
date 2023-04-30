@@ -1,3 +1,15 @@
+# Jaseci
+.env
+.jaseci_logs
+*session
+*jir
+*.jir
+ner.json
+modelout*
+train*
+logoutput
+modeloutput
+
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
@@ -36,6 +48,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+.env
 
 # System files
 .DS_Store

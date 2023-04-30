@@ -14,7 +14,7 @@ graph faq {
         models = spawn node::models;
         faq_state = spawn node::faq_state;
         faq_state_1 = spawn node::faq_state(
-            question="What is Apexmite?",
+            question="What is DIDEGGO?",
             answer="TODO"
         );
         faq_state_2 = spawn node::faq_state(
