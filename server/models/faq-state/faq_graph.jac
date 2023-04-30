@@ -18,7 +18,7 @@ graph faq {
             answer="TODO"
         );
         faq_state_2 = spawn node::faq_state(
-            question="TODO",
+            question="How do I vote on proposals using DIDEGGO?",
             answer="TODO"
         );
         faq_state_3 = spawn node::faq_state(
