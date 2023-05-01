@@ -12,7 +12,7 @@ edge intent_transition {
 }
 
 // Static graph definition
-graph vote {
+graph vote_state {
     has anchor server;
     spawn {
         server = spawn node::server;

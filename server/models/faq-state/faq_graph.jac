@@ -7,7 +7,7 @@ node faq_state {
 }
 
 // Static graph definition
-graph faq {
+graph faq_state {
     has anchor server;
     spawn {
         server = spawn node::server;
