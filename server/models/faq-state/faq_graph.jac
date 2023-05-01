@@ -15,23 +15,23 @@ graph faq {
         faq_state = spawn node::faq_state;
         faq_state_1 = spawn node::faq_state(
             question="What is DIDEGGO?",
-            answer="TODO"
+            answer="DIDEGGO Landing Page"
         );
         faq_state_2 = spawn node::faq_state(
             question="How do I vote on proposals using DIDEGGO?",
-            answer="TODO"
+            answer="Voting Page"
         );
         faq_state_3 = spawn node::faq_state(
-            question="TODO",
-            answer="TODO"
+            question="",
+            answer="Proposals Page"
         );
         faq_state_4 = spawn node::faq_state(
             question="TODO",
-            answer="TODO"
+            answer="Citizens Dashboard"
         );
         faq_state_5 = spawn node::faq_state(
             question="TODO",
-            answer="TODO"
+            answer="Quit App"
         );
         faq_state_6 = spawn node::faq_state(
             question="TODO",

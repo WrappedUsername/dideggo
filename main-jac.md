@@ -18,37 +18,6 @@ walker init {
 }
 ```
 
-## The main_faq.json file
-
-```json
-[
-    {
-      "question": "What is Apexmite?",
-      "answer": "TODO"
-    },
-    {
-      "question": "TODO",
-      "answer": "TODO"
-    },
-    {
-      "question": "TODO",
-      "answer": "TODO"
-    },
-    {
-      "question": "TODO",
-      "answer": "TODO"
-    },
-    {
-      "question": "TODO",
-      "answer": "TODO"
-    },
-    {
-      "question": "TODO",
-      "answer": "TODO"
-    }
-  ]
-```
-
 ## Working faq_graph
 
 ```bash
@@ -114,4 +83,14 @@ strict digraph root {
 jaseci > exit
 root@Arrakis:~/apexmite-jac/apexmite-jac# dot -Tpdf main.dot -o main.pdf
 root@Arrakis:~/apexmite-jac/apexmite-jac#
+```
+
+## Welcome state landing page
+
+```typescript
+welcome_state_1 = spawn node::welcome_state(
+            title = "Welcome",
+            message = "Welcome to DIDEGGO, how can I help?",
+            prompts = ["Voting Page","Proposals Page","Citizens Dashboard","Quit"]
+        );
 ```
