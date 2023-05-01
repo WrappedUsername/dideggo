@@ -11,7 +11,7 @@ edge intent_transition {
     has intent;
 }
 
-// Static graph definition
+// Static vote state graph
 graph vote_state {
     has anchor server;
     spawn {
