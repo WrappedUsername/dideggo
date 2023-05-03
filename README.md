@@ -14,19 +14,20 @@ The problem:
 - Beyond personal autonomy, humans are incapable of governing other humans impartially, full-stop no debate.
 
 - Humans are far too easily corruptable, one only needs to take an honest look at history to see this truth.
-  - That is not to say that *all* persons in positions of power *will* ultimately become corrupted, *but*...
+  - That is not to say that _all_ persons in positions of power _will_ ultimately become corrupted, _but_...
 - Do we really want to continue to risk the chance of people in positions of power to ultimately become corrupted?
 
 <img width="250" height="250" align="left" src="https://user-images.githubusercontent.com/104662990/235253369-65eb40b3-ba6a-4f1b-a141-f32c7705f733.jpg"/>
 
-  - It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or from those that become corrupted after being seated in that position of power.
-- Only *bat-shit* crazy people continue to do the same thing over, and over, and over, and over, expecting different results. 
+- It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or from those that become corrupted after being seated in that position of power.
+- Only _bat-shit_ crazy people continue to do the same thing over, and over, and over, and over, expecting different results.
 
 ```yml
 The solution:
 ```
 
-- The decentralized AI global governance model, will receive votes (one vote to one citizen, this removes centralized power and influence) and proposals directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current governing models used today: *the people in positions of power*.
+- The decentralized AI global governance model, will receive votes (one vote to one citizen, this removes centralized power and influence) and proposals directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current governing models used today: _the people in positions of power_.
+
   - By removing the source of corruption, (the few people in positions of power), that can and will most likey become corrupted from unsavory rich people.
   - This allows a society to self-govern with a incorruptible AI overseeing the process.
   - Keeping the autonomous governance model aligned with the country's consitutional framework.

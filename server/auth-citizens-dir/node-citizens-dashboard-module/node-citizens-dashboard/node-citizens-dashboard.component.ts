@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'app-node-citizens-dashboard',
-  templateUrl: './node-citizens-dashboard.component.html',
-  styleUrls: ['./node-citizens-dashboard.component.scss']
+  selector: "app-node-citizens-dashboard",
+  templateUrl: "./node-citizens-dashboard.component.html",
+  styleUrls: ["./node-citizens-dashboard.component.scss"],
 })
-export class NodeCitizensDashboardComponent {
-
-}
+export class NodeCitizensDashboardComponent {}
