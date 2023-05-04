@@ -50,11 +50,11 @@ graph vote_state {
         // connect the vote_state_1 to node_voting_page
         vote_state_1 +[intent_transition(intent="Yes")]+> node_voting_page;
         // connect the vote_state_1 to vote_state_2
-        vote_state_1 +[intent_transition(intent="Proposals Page")]+> vote_state_2
+        vote_state_1 +[intent_transition(intent="Proposals Page")]+> vote_state_2;
         // connect the vote_state_1 to vote_state_3
-        vote_state_1 +[intent_transition(intent="Citizens Dashboard")]+> vote_state_3
+        vote_state_1 +[intent_transition(intent="Citizens Dashboard")]+> vote_state_3;
         // connect the vote_state_1 to vote_state_4
-        vote_state_1 +[intent_transition(intent="Quit")]+> vote_state_4
+        vote_state_1 +[intent_transition(intent="Quit")]+> vote_state_4;
         
 
         // connect the vote_state_2 to node_proposals_page
