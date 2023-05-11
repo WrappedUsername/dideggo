@@ -162,8 +162,20 @@ source .venv/bin/activate
 
 ![Jac](https://user-images.githubusercontent.com/104662990/235270424-83eb1908-005c-4a99-8103-6f845d186d34.png)
 
+- Training the bi-encoder model with the faq training data.
+
+- Starting the Redis server
+
 ```bash
-Successfully installed PyPDF2-1.27.12 audioread-3.0.0 cffi-1.15.1 cython-0.29.34 hdbscan-0.8.29 hyperpyyaml-1.2.0 inflect-6.0.1 jaseci-ai-kit-1.4.0.3 librosa-0.9.2 llvmlite-0.39.1 numba-0.56.4 platformdirs-3.5.0 pooch-1.7.0 pycparser-2.21 pynndescent-0.5.10 resampy-0.4.2 soundfile-0.11.0 speechbrain-0.5.13 torchaudio-0.13.1 umap-learn-0.5.3 unidecode-1.3.6
+sudo service redis-server restart
+```
+
+```bash
+actions load module jac_nlp.bi_enc
+```
+
+```bash
+(venv) wrappedusername@Arrakis:~/apexmite-jac$ sudo jsctl -m jac run bi_enc.jac -walk train -ctx '{"train_file": "vote_training_data.json"}'
 ```
 
 This project's front-end was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
