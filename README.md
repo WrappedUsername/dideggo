@@ -175,7 +175,7 @@ actions load module jac_nlp.bi_enc
 ```
 
 ```bash
-jac run bi_enc.jac -walk train -ctx '{"train_file": "chat_training_data.json"}'
+jac run bi_enc.jac -walk train -ctx '{"train_file": "vote_training_data.json"}'
 ```
 
 ```bash
