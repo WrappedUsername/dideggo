@@ -175,7 +175,11 @@ actions load module jac_nlp.bi_enc
 ```
 
 ```bash
-(venv) wrappedusername@Arrakis:~/apexmite-jac$ sudo jsctl -m jac run bi_enc.jac -walk train -ctx '{"train_file": "vote_training_data.json"}'
+jac run bi_enc.jac -walk train -ctx '{"train_file": "chat_training_data.json"}'
+```
+
+```bash
+jac run bi_enc.jac -walk infer -ctx "{\"labels\": [\"DIDEGGO Landing Page\", \"DIDEGGO Voting Page\", \"DIDEGGO Proposals Page\", \"DIDEGGO Citizens Dashboard\"]}"
 ```
 
 This project's front-end was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.

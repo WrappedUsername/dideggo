@@ -1,22 +1,18 @@
 [
   {
-    "question": "What is DIDEGGO?",
+    "question": "What is DIDEGGO and how does it work?",
     "answer": "DIDEGGO Landing Page"
   },
   {
-    "question": "How do I quit and leave the app?",
-    "answer": "Quit App Button"
-  },
-  {
     "question": "How do I vote on proposals using DIDEGGO?",
-    "answer": "Voting Page"
+    "answer": "DIDEGGO Voting Page"
   },
   {
     "question": "How do I create a proposal using DIDEGGO?",
-    "answer": "Proposals Page"
+    "answer": "DIDEGGO Proposals Page"
   },
   {
     "question": "How do I update my documents?",
-    "answer": "Citizens Dashboard"
+    "answer": "DIDEGGO Citizens Dashboard"
   }
 ]

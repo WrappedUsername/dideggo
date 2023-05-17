@@ -14,25 +14,25 @@ graph faq_state {
         models = spawn node::models;
         faq_state = spawn node::faq_state;
         faq_state_1 = spawn node::faq_state(
-            question="What is DIDEGGO?",
+            question="What is DIDEGGO and how does it work?",
             answer="DIDEGGO Landing Page"
         );
         faq_state_2 = spawn node::faq_state(
-            question="How do I quit and leave the app?",
-            answer="Quit App Button"
+            question="How do I vote on proposals using DIDEGGO?",
+            answer="DIDEGGO Voting Page"
         );
         faq_state_3 = spawn node::faq_state(
-            question="How do I vote on proposals using DIDEGGO?",
-            answer="Voting Page"
+            question="How do I create a proposal using DIDEGGO?",
+            answer="DIDEGGO Proposals Page"
         );
         faq_state_4 = spawn node::faq_state(
-            question="How do I create a proposal using DIDEGGO?",
-            answer="Proposals Page"
-        );
-        faq_state_5 = spawn node::faq_state(
             question="How do I update my documents?",
-            answer="Citizens Dashboard"
+            answer="DIDEGGO Citizens Dashboard"
         );
+        // faq_state_5 = spawn node::faq_state(
+        //     question="",
+        //     answer=""
+        // );
         // ready to expand faq...
         // faq_state_6 = spawn node::faq_state(
         //     question="",
@@ -66,7 +66,7 @@ graph faq_state {
         faq_state ++> faq_state_2;
         faq_state ++> faq_state_3;
         faq_state ++> faq_state_4;
-        faq_state ++> faq_state_5;
+        // faq_state ++> faq_state_5;
         // ready to expand faq...
         // faq_state ++> faq_state_6;
         // faq_state ++> faq_state_7;

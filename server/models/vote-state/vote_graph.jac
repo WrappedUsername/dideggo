@@ -21,22 +21,22 @@ graph vote_state {
         vote_state_1 = spawn node::vote_state(
             title = "DIDEGGO Landing Page",
             message = "Welcome to DIDEGGO! Are you ready to participate in Digital Intelligence Decentralized Global Governance?",
-            prompts = ["Yes","Voting Page","Proposals Page","Citizens Dashboard"]
+            prompts = ["Yes","DIDEGGO Voting Page","DIDEGGO Proposals Page","DIDEGGO Citizens Dashboard"]
         );
         vote_state_2 = spawn node::vote_state(
-            title = "Voting Page",
+            title = "DIDEGGO Voting Page",
             message = "Welcome to DIDEGGO Voting! Are you ready to vote?",
-            prompts = ["Yes","Landing Page","Proposals Page","Citizens Dashboard"]
+            prompts = ["Yes","DIDEGGO Landing Page","DIDEGGO Proposals Page","DIDEGGO Citizens Dashboard"]
         );
         vote_state_3 = spawn node::vote_state(
-            title = "Proposals Page",
+            title = "DIDEGGO Proposals Page",
             message = "Welcome to DIDEGGO proposals! Are you ready to create a proposal?",
-            prompts = ["Yes","Landing Page","Voting Page","Citizens Dashboard"]
+            prompts = ["Yes","DIDEGGO Landing Page","DIDEGGO Voting Page","DIDEGGO Citizens Dashboard"]
         );
         vote_state_4 = spawn node::vote_state(
-            title = "Citizens Dashboard",
+            title = "DIDEGGO Citizens Dashboard",
             message = "Welcome to your Citizens Dashboard! Would you like to update info?",
-            prompts = ["Yes","Landing Page","Voting Page","Proposals Page"]
+            prompts = ["Yes","DIDEGGO Landing Page","DIDEGGO Voting Page","DIDEGGO Proposals Page"]
         );
 
         // Connecting the nodes together
@@ -50,39 +50,39 @@ graph vote_state {
         // connect the vote_state_1 to node_landing_page
         vote_state_1 +[intent_transition(intent="Yes")]+> node_landing_page;
         // connect the vote_state_1 to vote_state_2
-        vote_state_1 +[intent_transition(intent="Voting Page")]+> vote_state_2;
+        vote_state_1 +[intent_transition(intent="DIDEGGO Voting Page")]+> vote_state_2;
         // connect the vote_state_1 to vote_state_3
-        vote_state_1 +[intent_transition(intent="Proposals Page")]+> vote_state_3;
+        vote_state_1 +[intent_transition(intent="DIDEGGO Proposals Page")]+> vote_state_3;
         // connect the vote_state_1 to vote_state_4
-        vote_state_1 +[intent_transition(intent="Citizens Dashboard")]+> vote_state_4;
+        vote_state_1 +[intent_transition(intent="DIDEGGO Citizens Dashboard")]+> vote_state_4;
 
         // connect the vote_state_2 to node_voting_page
         vote_state_2 +[intent_transition(intent="Yes")]+> node_voting_page;
         // connect the vote_state_2 to vote_state_1
-        vote_state_2 +[intent_transition(intent="Landing Page")]+> vote_state_1;
+        vote_state_2 +[intent_transition(intent="DIDEGGO Landing Page")]+> vote_state_1;
         // connect the vote_state_2 to vote_state_3
-        vote_state_2 +[intent_transition(intent="Proposals Page")]+> vote_state_3;
+        vote_state_2 +[intent_transition(intent="DIDEGGO Proposals Page")]+> vote_state_3;
         // connect the vote_state_2 to vote_state_4
-        vote_state_2 +[intent_transition(intent="Citizens Dashboard")]+> vote_state_4;
+        vote_state_2 +[intent_transition(intent="DIDEGGO Citizens Dashboard")]+> vote_state_4;
         
 
         // connect the vote_state_3 to node_proposals_page
         vote_state_3 +[intent_transition(intent="Yes")]+> node_proposals_page;
         // connect the vote_state_3 to vote_state_1
-        vote_state_3 +[intent_transition(intent="Landing Page")]+> vote_state_1;
+        vote_state_3 +[intent_transition(intent="DIDEGGO Landing Page")]+> vote_state_1;
         // connect the vote_state_3 to vote_state_2
-        vote_state_3 +[intent_transition(intent="Voting Page")]+> vote_state_2;
+        vote_state_3 +[intent_transition(intent="DIDEGGO Voting Page")]+> vote_state_2;
         // connect the vote_state_3 to vote_state_4
-        vote_state_3 +[intent_transition(intent="Citizens Dashboard")]+> vote_state_4;
+        vote_state_3 +[intent_transition(intent="DIDEGGO Citizens Dashboard")]+> vote_state_4;
 
         // connect the vote_state_4 to node_citizens_dashboard
         vote_state_4 +[intent_transition(intent="Yes")]+> node_citizens_dashboard;
         // connect the vote_state_4 to vote_state_1
-        vote_state_4 +[intent_transition(intent="Landing Page")]+> vote_state_1;
+        vote_state_4 +[intent_transition(intent="DIDEGGO Landing Page")]+> vote_state_1;
         // connect the vote_state_4 to vote_state_2
-        vote_state_4 +[intent_transition(intent="Voting Page")]+> vote_state_2;
+        vote_state_4 +[intent_transition(intent="DIDEGGO Voting Page")]+> vote_state_2;
         // connect the vote_state_4 to vote_state_3
-        vote_state_4 +[intent_transition(intent="Proposals Page")]+> vote_state_3;
+        vote_state_4 +[intent_transition(intent="DIDEGGO Proposals Page")]+> vote_state_3;
     }
 }
 
