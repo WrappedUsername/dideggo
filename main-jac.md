@@ -21,7 +21,7 @@ walker init {
 ## Working faq_graph
 
 ```bash
-root@Arrakis:~/apexmite-jac/apexmite-jac# jsctl -m
+jsctl -m
 Jaseci 1.4.0.15
 Starting Shell...
 jaseci > graph create -set_active true
