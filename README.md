@@ -5,7 +5,7 @@
 <img alt="Stars" src="https://img.shields.io/github/stars/WrappedUsername/dideggo?style=flat-square&labelColor=343b41"/>
 </p>
 
-## I am 💯% for individual freedom and autonomy.
+## I am 💯% for individual freedom and autonomy and this project will always be voluntary.
 
 ```yml
 The problem:
