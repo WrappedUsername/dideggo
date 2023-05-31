@@ -26,7 +26,7 @@ The problem:
 
 - It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or from those that become corrupted after being seated in that position of power.
 - Only _bat-shit_ crazy people continue to do the same thing over, and over, and over, and over, expecting different results.
-- We no longer need representatives to travel to the seat of power to represent all of us (we the people), only to become corrupted by wealthy elites, we have technologies that transmits data over thousands of miles, near instantly.
+- We no longer need representatives to travel to the seat of power to represent all of us (we the people), only to become corrupted by wealthy elites, we have technologies that transmit data over thousands of miles, near instantly.
 
 ```yml
 The solution:
