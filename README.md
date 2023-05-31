@@ -34,7 +34,8 @@ The solution:
 
 We the people no longer need representives to represent us we can represent ourselves, we can create proposals ourselves, and we all can vote on these proposals _ourselves autonomously,_ we have the technologies to do this right now!
 
-- The decentralized AI global governance model, will receive votes (one vote to one citizen, this removes centralized power and influence) and proposals directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current governing models used today: _the people in positions of power_.
+- The decentralized AI global governance model, will receive votes (one vote, to one citizen, this removes centralized power and influence).
+- Proposals will be created directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current outdated governing models used today: _the people in positions of power_.
 
   - By removing the source of corruption, (the few people in positions of power), that can and will most likey become corrupted from unsavory rich people.
   - This allows a society to self-govern with a incorruptible AI overseeing the process.
