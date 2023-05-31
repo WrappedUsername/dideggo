@@ -158,10 +158,6 @@ sudo service redis-server restart
 source .venv/bin/activate
 ```
 
-## The real Jac programming language syntax highlighting in VS Code
-
-![Jac](https://user-images.githubusercontent.com/104662990/235270424-83eb1908-005c-4a99-8103-6f845d186d34.png)
-
 - Training the bi-encoder model with the faq training data.
 
 - Starting the Redis server
