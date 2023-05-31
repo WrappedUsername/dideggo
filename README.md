@@ -26,10 +26,13 @@ The problem:
 
 - It's like we are rolling the dice and praying to RNGesus to keep us safe from corrupt people that seek positions of power, or from those that become corrupted after being seated in that position of power.
 - Only _bat-shit_ crazy people continue to do the same thing over, and over, and over, and over, expecting different results.
+- We no longer need representatives to travel to the seat of power to represent all of us (we the people), only to become corrupted by wealthy elites, we have technologies that transmits data over thousands of miles, near instantly.
 
 ```yml
 The solution:
 ```
+
+We the people no longer need representives to represent us we can represent ourselves, we can create proposals ourselves, and we all can vote on these proposals _ourselves autonomously,_ we have the technologies to do this right now!
 
 - The decentralized AI global governance model, will receive votes (one vote to one citizen, this removes centralized power and influence) and proposals directly from the citizens (all on the ethereum blockchain for transparency), completely removing the points of failure of current governing models used today: _the people in positions of power_.
 
