@@ -5,7 +5,12 @@
 <img alt="Stars" src="https://img.shields.io/github/stars/WrappedUsername/dideggo?style=flat-square&labelColor=343b41"/>
 </p>
 
-## I am 💯% for individual freedom and autonomy.
+## I am 💯% for individual freedom and autonomy
+
+- _Disclaimer_
+
+This project is a voluntary technology demonstrator.
+This project is intended to solve problems and provide guidance to established governing entities, in order to update current outdated governance models, to meet the new emerging AI global governance, geo-political economic model.
 
 ```yml
 The problem:
@@ -196,4 +201,4 @@ jac run bi_enc.jac -walk load_model -ctx '{"model_path": "dialogue_intent_model"
 jac run main.jac
 ```
 
-This project's front-end was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
